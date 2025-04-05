@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Cá Nhân Siêu Đẹp</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .profile-container {
+      position: relative;
+      width: 300px;
+      text-align: center;
+      color: white;
+    }
+
+    .avatar-frame {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .smoke, .rose {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      animation: float 10s infinite linear;
+      opacity: 0.6;
+    }
+
+    .smoke {
+      background: url('https://i.gifer.com/Y6PH.gif') no-repeat center;
+      background-size: contain;
+      filter: blur(2px);
+    }
+
+    .rose {
+      background: url('https://cdn.pixabay.com/photo/2012/04/24/16/52/rose-40783_1280.png') no-repeat center;
+      background-size: cover;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(80px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-220px) rotate(360deg);
+      }
+    }
+
+    .info {
+      margin-top: 20px;
+    }
+
+    .info h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="avatar-frame">
+      <img src="https://i.imgur.com/your-avatar.png" alt="Avatar">
+      <!-- Smoke effect -->
+      <div class="smoke" style="top: 100%; left: 10%; animation-delay: 0s;"></div>
+      <div class="smoke" style="top: 100%; left: 60%; animation-delay: 3s;"></div>
+      <!-- Rose effect -->
+      <div class="rose" style="top: 100%; left: 30%; animation-delay: 1s;"></div>
+      <div class="rose" style="top: 100%; left: 80%; animation-delay: 4s;"></div>
+    </div>
+    <div class="info">
+      <h2>🌟 Tên Của Bạn 🌟</h2>
+      <p>Lập trình viên sáng tạo | Yêu thích thiết kế | Đam mê công nghệ<br>
+      “Code là nghệ thuật, mình là nghệ sĩ.”</p>
+    </div>
+  </div>
+</body>
+</html>
