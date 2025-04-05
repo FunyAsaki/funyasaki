@@ -2,138 +2,68 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>🌸 Profile Của Tôi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <title>Profile</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
-      scroll-behavior: smooth;
-    }
-
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      background: linear-gradient(180deg, #1f1c2c, #928dab);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    section {
-      min-height: 100vh;
+      padding: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-      padding: 40px 20px;
+      height: 100vh;
+      flex-direction: column;
     }
 
-    .avatar-frame {
-      position: relative;
-      width: 220px;
-      height: 220px;
-      margin-bottom: 20px;
-    }
-
-    .avatar-glow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 0, 255, 0.4), transparent 70%);
-      box-shadow: 0 0 30px 10px rgba(255, 0, 255, 0.5);
-      animation: glowPulse 4s ease-in-out infinite, glowRotate 20s linear infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-    }
-
-    @keyframes glowRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .avatar-frame img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      z-index: 2;
-      border: 4px solid white;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: #ffeef2;
-    }
-
-    p {
-      font-size: 16px;
-      color: #f0f0f0;
+    .profile-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
-      max-width: 500px;
-    }
-
-    .social-links {
-      margin-top: 25px;
+      width: 300px;
       display: flex;
-      gap: 30px;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .social-links a {
-      font-size: 30px;
-      color: white;
-      transition: transform 0.3s, color 0.3s;
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background-image: url('avatar.jpg'); /* Thay avatar của bạn tại đây */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+      animation: glow 1.5s infinite alternate;
     }
 
-    .social-links a:hover {
-      transform: scale(1.2);
-      color: #ff8ccf;
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 0, 255, 1);
+      }
     }
 
-    .scroll-btn {
-      position: absolute;
-      bottom: 20px;
-      font-size: 30px;
-      animation: bounce 2s infinite;
-      color: #ffffffcc;
-      cursor: pointer;
+    .links a {
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+      color: #333;
+      transition: color 0.3s;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
+    .links a:hover {
+      color: #ff00ff;
     }
 
-    .about {
-      background: linear-gradient(180deg, #928dab, #1f1c2c);
-      text-align: center;
-    }
-
-    .scroll-up {
-      position: absolute;
-      top: 20px;
-      font-size: 30px;
-      animation: bounce 2s infinite;
-      color: #ffffffcc;
-      cursor: pointer;
+    .music-link {
+      margin-top: 20px;
     }
 
     audio {
@@ -142,56 +72,24 @@
   </style>
 </head>
 <body>
+  <div class="profile-container">
+    <div class="avatar"></div>
+    <h2>Người Dùng</h2>
+    <p>Chào mừng đến với trang profile của tôi!</p>
 
-  <!-- Nhạc tự động phát -->
-  <audio autoplay loop>
-    <source src="https://example.com/your-music.mp3" type="audio/mpeg">
-  </audio>
-
-  <section id="home">
-    <div class="avatar-frame">
-      <div class="avatar-glow"></div>
-      <img src="https://images-ext-1.discordapp.net/external/bVn7NlVqqzTqpYzW5qA1yGhLkggnRW092kz-V1zbtXE/%3Fsize%3D4096%26ignore%3Dtrue%29./https/cdn.discordapp.com/avatars/1330168129397198869/99635edb1e1f8b5d212901ceed36b794.png?format=webp&quality=lossless" alt="Avatar"> <!-- Ảnh bạn vừa gửi -->
+    <div class="links">
+      <a href="https://discord.com" target="_blank">Discord</a>
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
     </div>
 
-    <h1>🌸 KinooVN 🌸</h1>
-    <p><br>Lập trình viên, Thiết kế, Game dev, Người mộng mơ ✨</p>
-
-    <div class="social-links">
-      <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      <a href="https://discord.com/users/yourid" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="music-link">
+      <p>Phát nhạc tự động:</p>
+      <audio autoplay loop>
+        <source src="your-audio-file.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ audio.
+      </audio>
     </div>
-
-    <a href="#about" class="scroll-btn"><i class="fas fa-chevron-down"></i></a>
-  </section>
-
-  <section id="about" class="about">
-    <a href="#home" class="scroll-up"><i class="fas fa-chevron-up"></i></a>
-    <h1>📝 Giới Thiệu</h1>
-    <p>Tôi là một người sáng tạo, đang từng bước xây dựng nên thế giới của riêng mình.<br>
-    Minecraft, Roblox, Web, Game — tất cả đều là canvas của bạn.</p>
-  </section>
-
+  </div>
 </body>
 </html>
-
-<div class="profile-container">
-  <div class="avatar"></div>
-  <h2>Người Dùng</h2>
-  <p>Chào mừng đến với trang profile của tôi!</p>
-
-  <div class="links">
-    <a href="https://discord.com" target="_blank">Discord</a>
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-    <a href="https://github.com" target="_blank">GitHub</a>
-  </div>
-
-  <div class="music-link">
-    <p>Phát nhạc tự động:</p>
-    <audio autoplay loop>
-      <source src="your-audio-file.mp3" type="audio/mpeg">
-      Trình duyệt của bạn không hỗ trợ audio.
-    </audio>
-  </div>
-</div>
