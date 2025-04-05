@@ -27,9 +27,9 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      position: relative;
     }
 
-    /* === Avatar === */
     .avatar-frame {
       position: relative;
       width: 220px;
@@ -39,15 +39,24 @@
 
     .avatar-border {
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: url('https://cdn.pixabay.com/photo/2023/02/06/15/12/roses-7770883_960_720.png') no-repeat center;
-      background-size: cover;
       animation: rotate 20s linear infinite;
-      filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.5));
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
       z-index: 1;
+    }
+
+    .avatar-border::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+      animation: pulse 3s ease-in-out infinite;
     }
 
     .avatar-frame img {
@@ -66,7 +75,41 @@
       to { transform: rotate(360deg); }
     }
 
-    /* === Info === */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Flower Particles */
+    .flower {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/765/765490.png'); /* Hoa PNG */
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      animation: fly 10s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(300px, -300px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .flower:nth-child(1) { top: 50%; left: 50%; animation-delay: 0s; }
+    .flower:nth-child(2) { top: 40%; left: 60%; animation-delay: 1s; }
+    .flower:nth-child(3) { top: 60%; left: 40%; animation-delay: 2s; }
+    .flower:nth-child(4) { top: 45%; left: 70%; animation-delay: 3s; }
+    .flower:nth-child(5) { top: 55%; left: 30%; animation-delay: 4s; }
+
     h1 {
       font-size: 30px;
       margin-bottom: 10px;
@@ -80,7 +123,6 @@
       max-width: 500px;
     }
 
-    /* === Social Links === */
     .social-links {
       margin-top: 25px;
       display: flex;
@@ -98,7 +140,6 @@
       color: #ff8ccf;
     }
 
-    /* === Scroll Button === */
     .scroll-btn {
       position: absolute;
       bottom: 20px;
@@ -113,7 +154,6 @@
       50% { transform: translateY(10px); }
     }
 
-    /* === Section 2: Thông tin thêm === */
     .about {
       background: linear-gradient(180deg, #928dab, #1f1c2c);
       text-align: center;
@@ -126,16 +166,21 @@
 </head>
 <body>
 
-  <!-- Auto Play Music -->
+  <!-- Music -->
   <audio autoplay loop>
     <source src="https://example.com/your-music.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Section 1: Avatar & Info -->
   <section id="home">
     <div class="avatar-frame">
       <div class="avatar-border"></div>
-      <img src="https://i.imgur.com/your-avatar.png" alt="Avatar">
+      <img src="image.png" alt="Avatar"> <!-- Dùng ảnh bạn vừa gửi -->
+      <!-- Hoa bay quanh avatar -->
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
     </div>
 
     <h1>🌸 Tên Của Bạn 🌸</h1>
@@ -150,12 +195,10 @@
     <a href="#about" class="scroll-btn"><i class="fas fa-chevron-down"></i></a>
   </section>
 
-  <!-- Section 2: Thông tin thêm -->
   <section id="about" class="about">
     <h1>📝 Giới Thiệu</h1>
-    <p>Mình là một người yêu thích lập trình và thiết kế giao diện đẹp.  
-    Đang phát triển các dự án về game, website, Minecraft và Roblox.</p>
-
+    <p>Mình đang xây dựng nhiều dự án sáng tạo: Minecraft, Roblox, Web và AI.<br>
+    Luôn học hỏi để làm điều tốt hơn mỗi ngày!</p>
     <a href="#home" class="scroll-btn" style="top: 20px; bottom: auto;"><i class="fas fa-chevron-up"></i></a>
   </section>
 
