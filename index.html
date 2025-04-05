@@ -81,12 +81,41 @@
       line-height: 1.5;
     }
 
+    .contact {
+      margin-top: 25px;
+    }
+
+    .contact h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.3);
+      color: #ff6bcb;
+    }
+
   </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="profile-container">
     <div class="avatar-frame">
-      <img src="https://images-ext-1.discordapp.net/external/bVn7NlVqqzTqpYzW5qA1yGhLkggnRW092kz-V1zbtXE/%3Fsize%3D4096%26ignore%3Dtrue%29./https/cdn.discordapp.com/avatars/1330168129397198869/99635edb1e1f8b5d212901ceed36b794.png?format=webp&quality=lossless" alt="Avatar">
+      <img src="https://i.imgur.com/your-avatar.png" alt="Avatar">
       <!-- Smoke effect -->
       <div class="smoke" style="top: 100%; left: 10%; animation-delay: 0s;"></div>
       <div class="smoke" style="top: 100%; left: 60%; animation-delay: 3s;"></div>
@@ -94,10 +123,21 @@
       <div class="rose" style="top: 100%; left: 30%; animation-delay: 1s;"></div>
       <div class="rose" style="top: 100%; left: 80%; animation-delay: 4s;"></div>
     </div>
+
     <div class="info">
-      <h2>🌟 KinooVN 🌟</h2>
+      <h2>🌟 Tên Của Bạn 🌟</h2>
       <p>Lập trình viên sáng tạo | Yêu thích thiết kế | Đam mê công nghệ<br>
       “Code là nghệ thuật, mình là nghệ sĩ.”</p>
+    </div>
+
+    <div class="contact">
+      <h3>Liên hệ</h3>
+      <div class="social-links">
+        <a href="https://facebook.com/yourname" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://discord.com/users/yourid" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </div>
 </body>
